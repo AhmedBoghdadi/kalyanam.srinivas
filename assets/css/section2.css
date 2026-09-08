@@ -39,8 +39,8 @@
 
 .feature-card {
   position: relative;
-  flex: 0 0 clamp(610px, 57vw, 840px);
-  width: clamp(610px, 57vw, 840px);
+  flex: 0 0 clamp(320px, 24vw, 400px);
+  width: clamp(320px, 24vw, 400px);
   min-width: 0;
   aspect-ratio: 4 / 3;
   padding: 14px 20px;
@@ -79,7 +79,7 @@
 }
 
 .card-one {
-  background-image: linear-gradient(rgb(247 249 252 / 0%), rgb(234 236 238 / 0%)), url(images/001.png);
+  background-image: linear-gradient(rgb(247 249 252 / 0%), rgb(234 236 238 / 0%)), url('images/001.png?123');
 }
 
 .card-two {
@@ -230,6 +230,15 @@
   .feature-card {
     flex-basis: clamp(520px, 82vw, 730px);
     width: clamp(520px, 82vw, 730px);
+  }
+}
+
+/* Desktop: fit exactly the first 3 cards in view; card 4 is reached by
+   scrolling the row */
+@media (min-width: 1200px) {
+  .feature-card {
+    flex: 0 0 calc((100% - 2 * 15px) / 3);
+    width: calc((100% - 2 * 15px) / 3);
   }
 }
 

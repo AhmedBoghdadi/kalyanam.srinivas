@@ -35,6 +35,12 @@
   isolation: isolate;
   overflow: hidden;
   background: var(--dark);
+  /* Overrides a legacy min-height:680px rule from responsive.css
+     (@media max-width:760px) left over from an older hero design.
+     The hero is now image-only, so its height must always come from
+     the image itself (via .hero-media { height: auto }), never from a
+     fixed min-height, or a gap appears below the image on mobile. */
+  min-height: 0;
 }
 
 .hero-media {
