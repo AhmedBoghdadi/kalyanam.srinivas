@@ -1,12 +1,8 @@
-/* Third HTML section: Benefits
-   Base colors/spacing only — the row's layout (flex + auto-scroll)
-   now lives entirely in benefits-strip.css and applies at every
-   screen width, not just mobile/tablet, so the old grid rules and
-   their grid-template-columns breakpoints have been removed here to
-   avoid dead/conflicting CSS.
-*/
+/* Third HTML section: Benefits */
 
 .benefits {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
   padding: 15px 5%;
   color: var(--yellow);
@@ -14,6 +10,7 @@
 }
 
 .benefits div {
+  display: flex;
   align-items: center;
   gap: 11px;
   font-size: 30px;
@@ -31,8 +28,15 @@
   font-size: 13px;
 }
 
+@media (max-width: 1050px) {
+  .benefits {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   .benefits {
+    grid-template-columns: repeat(2, 1fr);
     padding: 20px;
   }
 

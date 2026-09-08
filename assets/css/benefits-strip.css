@@ -1,84 +1,58 @@
 /* Section 3: Benefits strip ("100% Telugu Learning", "Hands-on AI Tools", ...)
 
-   Matches the ACTUAL behaviour of the ".strip" row in courses.html (verified
-   against courses.html's CSS and md_nav.js — there is no auto-playing
-   marquee anywhere in the project; md_nav.js only handles the mobile nav
-   toggle, and ".strip-clone" in courses.html has no matching HTML element,
-   so it's inert leftover CSS).
+   This now drives the auto-scrolling row on EVERY screen size (large
+   desktop down to small mobile), not just mobile/tablet as before.
 
-   The real ".strip" behaviour on mobile/tablet is simply:
-   - a flex row with overflow-x: auto (manual swipe/drag to scroll)
-   - scroll-snap-type: none (free scroll, no snapping to cards)
-   - cursor: grab (hints it's draggable)
-   - scrollbar hidden
+   Layout: a flex row with overflow-x auto, no scroll-snap, hidden
+   scrollbar, "grab" cursor hinting it's draggable. The continuous
+   auto-scroll motion, and pausing it on hover/touch/focus, are
+   handled by the vanilla-JS engine embedded in index.html — this
+   file only handles layout/visual presentation.
 
-   The actual auto-scroll motion, cloning for the seamless loop, and the
-   pause-on-touch/mouse/wheel behaviour are handled by benefits-strip.js
-   (a direct port of the .strip auto-scroll script), not by this CSS —
-   this file only handles the layout/visual side.
-
-   Mobile + tablet: same free drag-scroll strip.
-   Laptop + desktop: original static row, untouched.
-
-   Note: the cloned items are exact copies of the original ".benefits > div"
-   children, so an existing site rule of that shape (higher specificity than
-   a single ".benefit-clone" class) could otherwise beat our "hide on
-   desktop" rule and leave the clones visible as a stacked duplicate row.
-   The !important below exists solely to guarantee the clones stay hidden
-   outside the mobile/tablet range, regardless of any other rule's
-   specificity — it does not affect anything but this one class.
+   Seamless loop: ".benefit-clone" is an exact duplicate set of the
+   original ".benefits > div" children (already present in the HTML).
+   It stays visible at every width now so the JS can scroll through
+   "real set -> clone set -> jump back" without any visible seam.
 */
 
 .benefit-clone {
-  display: none !important;
+  display: flex !important;
 }
 
-@media (max-width: 1199px) {
-  .benefit-clone {
-    display: flex !important;
-  }
+.benefits {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
 
-  .benefits {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: none;
-    cursor: grab;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 4px;
-  }
+.benefits::-webkit-scrollbar {
+  display: none;
+}
 
-  .benefits::-webkit-scrollbar {
-    display: none;
-  }
+.benefits:active {
+  cursor: grabbing;
+}
 
-  .benefits:active {
-    cursor: grabbing;
-  }
-
-  .benefits > div {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    white-space: nowrap;
-  }
+.benefits > div {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* Phones: slightly tighter spacing */
 @media (max-width: 600px) {
   .benefits {
     gap: 14px;
-  }
-}
-
-/* Desktop: original static row, no scrolling */
-@media (min-width: 1200px) {
-  .benefits {
-    overflow-x: visible;
   }
 }

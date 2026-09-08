@@ -2,17 +2,6 @@
    All screen sizes: horizontal scrolling row so each card keeps a
    comfortable, readable size (matching the original 3-card size)
    even now that there are 4 cards.
-
-   Auto-scroll: the row now auto-scrolls continuously on every screen
-   size (desktop included), driven by the vanilla-JS engine embedded
-   in index.html. scroll-snap is disabled here because CSS scroll
-   snapping fights a JS-driven scrollLeft (it keeps yanking the
-   position back to the nearest snap point); scroll-behavior is
-   "auto" for the same reason — "smooth" would queue up a native
-   scroll animation on every single animation-frame nudge and make
-   the motion stutter. Manual wheel/touch/trackpad scrolling still
-   works exactly as before; the JS only pauses (never removes) the
-   auto-scroll on hover/touch/focus.
 */
 
 .feature-grid {
@@ -24,19 +13,14 @@
   padding: 14px 2.3% 18px;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: auto;
-  scroll-snap-type: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
   scroll-padding-inline: 2.3%;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--yellow) #10202b;
   background: #020a10;
-  cursor: grab;
-}
-
-.feature-grid:active {
-  cursor: grabbing;
 }
 
 .feature-grid::-webkit-scrollbar {
@@ -65,6 +49,7 @@
   border-radius: 10px;
   background-size: cover;
   background-position: center;
+  scroll-snap-align: start;
   transition: box-shadow .25s ease, border-color .25s ease;
 }
 
