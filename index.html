@@ -110,17 +110,16 @@
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle"
                             class="lucide lucide-message-circle icon-sm" aria-hidden="true">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                        </svg>WhatsApp</a></div>
-                <a class="primary-btn" href="/courses.html" style="text-align: center;">Join for Free</a>
+                        </svg>WhatsApp</a></div><a class="primary-btn" href="/courses.html"
+                    style="text-align: center;">Join for Free</a>
             </nav>
         </div>
     </header>
     <main id="main-content">
         <section class="hero" id="home"><img class="hero-media" src="assets/css/images/hero.png?123"
                 alt="Filmmaker editing an AI-generated film scene at a desktop workstation, surrounded by 'Dream Plan Create Repeat' notes and film books"
-                loading="eager" fetchpriority="high" style="
-    cursor: pointer;
-" onclick="window.location.href = '/courses.html'"></section>
+                loading="eager" fetchpriority="high" style=" cursor: pointer; object-fit: cover;"
+                onclick="window.location.href='/courses.html'"></section>
         <section class="feature-grid" id="academy" style="color: white;">
             <article class="feature-card card-one video-trigger" id="films" data-video-id="GFlLJdR606g" role="button"
                 tabindex="0" aria-label="Play Mayaa Putalu trailer"></article>
@@ -195,6 +194,32 @@
                     <path d="m3 5 5-2 5 3 7-4"></path>
                 </svg><span>Career &amp; Monetization<br>Guidance</span></div>
             <div><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.8 8.8c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.8 4.8 0 0 1 12 6a4.8 4.8 0 0 1 8.8 2.8z">
+                    </path>
+                </svg><span>For Dreamers,<br>Creators, Doers</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 9.5 12 5l9 4.5L12 14 3 9.5zM6 11v5c3 2.5 9 2.5 12 0v-5M21 10v6"></path>
+                </svg><span>100%<br>Telugu Learning</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1">
+                    </path>
+                    <circle cx="12" cy="12" r="4"></circle>
+                </svg><span>Hands-on<br>AI Tools</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m4 7 4-3 4 3-4 3-4-3zM12 7l4-3 4 3-4 3-4-3zM4 15l4-3 4 3-4 3-4-3zM12 15l4-3 4 3-4 3-4-3z">
+                    </path>
+                </svg><span>Real Projects<br>&amp; Assignments</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <circle cx="17" cy="9" r="2.5"></circle>
+                    <path d="M3 20a6 6 0 0 1 12 0M15 14a5 5 0 0 1 6 6"></path>
+                </svg><span>Mentorship<br>&amp; Community</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 19V9M10 19V5M16 19v-8M22 19V3"></path>
+                    <path d="m3 5 5-2 5 3 7-4"></path>
+                </svg><span>Career &amp; Monetization<br>Guidance</span></div>
+            <div class="benefit-clone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M20.8 8.8c0 5.5-8.8 11-8.8 11s-8.8-5.5-8.8-11A4.8 4.8 0 0 1 12 6a4.8 4.8 0 0 1 8.8 2.8z">
                     </path>
                 </svg><span>For Dreamers,<br>Creators, Doers</span></div>
@@ -286,12 +311,131 @@
         </footer>
     </footer>
     <script src="assets/js/md.nav.js" type="module"></script>
-    <script src="assets/js/benefits-strip.js" type="module"></script>
+    <!-- assets/js/benefits-strip.js removed: its job (Section 3 auto-scroll on
+         mobile/tablet only) is now fully handled, on every screen size, by the
+         unified auto-scroll engine below. Keeping both loaded would double up
+         the animation and the hover/touch pause listeners on the same element. -->
     <script>(function () { document.querySelectorAll('.video-trigger').forEach(function (card) { function playVideo() { if (card.querySelector('iframe')) return; var id = card.getAttribute('data-video-id'); var iframe = document.createElement('iframe'); iframe.className = 'video-embed'; iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0'; iframe.title = 'YouTube video player'; iframe.setAttribute('frameborder', '0'); iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; iframe.allowFullscreen = true; card.appendChild(iframe); card.removeAttribute('role'); card.removeAttribute('tabindex'); card.removeAttribute('aria-label'); card.classList.remove('video-trigger'); } card.addEventListener('click', playVideo); card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); } }); }); })(); </script>
+    <script>
+    /*
+     * Unified auto-scroll ("marquee") engine for Section 2 (.feature-grid)
+     * and Section 3 (.benefits) — runs on every screen size, from large
+     * desktop down to small mobile, and pauses on hover/touch/focus.
+     *
+     * How the seamless loop works:
+     *  - Section 3 already ships a hand-duplicated copy of every ".benefits"
+     *    child in the markup (class="benefit-clone"), so we reuse that.
+     *  - Section 2 has no such duplicate, so this script clones its cards
+     *    once at runtime (stripping ids/data-testid/interactive attributes
+     *    from the clones so they stay pure visual filler, invisible to
+     *    assistive tech and to the video-trigger click handler above).
+     *  - Each frame we nudge the container's scrollLeft forward; once it
+     *    passes the halfway point (end of the "real" set / start of the
+     *    clone set) we subtract that half-width, which — because the two
+     *    halves are identical — is visually seamless.
+     */
+    (function () {
+      function prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      }
 
+      function stripForClone(node) {
+        node.setAttribute('aria-hidden', 'true');
+        node.setAttribute('tabindex', '-1');
+        node.classList.remove('video-trigger');
+        node.removeAttribute('role');
+        node.removeAttribute('aria-label');
+        node.removeAttribute('data-video-id');
+        node.removeAttribute('id');
+        node.removeAttribute('data-testid');
+        node.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+        node.querySelectorAll('[data-testid]').forEach(function (el) { el.removeAttribute('data-testid'); });
+        node.querySelectorAll('[tabindex]').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
+      }
 
+      function duplicateChildrenOnce(container, markerClass) {
+        var originals = Array.prototype.slice.call(container.children);
+        originals.forEach(function (child) {
+          var clone = child.cloneNode(true);
+          clone.classList.add(markerClass);
+          stripForClone(clone);
+          container.appendChild(clone);
+        });
+      }
 
+      function initMarquee(container, options) {
+        if (!container) return;
+        var speed = (options && options.speed) || 40; // pixels per second
+        var half = 0;
+        var paused = false;
+        var rafId = null;
+        var lastTs = null;
+        var reduced = prefersReducedMotion();
 
+        function measure() {
+          half = container.scrollWidth / 2;
+        }
+
+        function step(ts) {
+          if (lastTs === null) lastTs = ts;
+          var dt = (ts - lastTs) / 1000;
+          lastTs = ts;
+          if (!paused && half > 1 && !document.hidden) {
+            container.scrollLeft += speed * dt;
+            if (container.scrollLeft >= half) {
+              container.scrollLeft -= half;
+            }
+          }
+          rafId = requestAnimationFrame(step);
+        }
+
+        function pause() { paused = true; }
+        function resume() { paused = false; lastTs = null; }
+
+        container.addEventListener('mouseenter', pause);
+        container.addEventListener('mouseleave', resume);
+        container.addEventListener('touchstart', pause, { passive: true });
+        container.addEventListener('touchend', resume, { passive: true });
+        container.addEventListener('touchcancel', resume, { passive: true });
+        container.addEventListener('focusin', pause);
+        container.addEventListener('focusout', resume);
+        document.addEventListener('visibilitychange', function () { lastTs = null; });
+
+        var resizeTimer = null;
+        window.addEventListener('resize', function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(measure, 150);
+        });
+
+        container.style.scrollSnapType = 'none';
+        measure();
+
+        if (!reduced) {
+          rafId = requestAnimationFrame(step);
+        }
+      }
+
+      function start() {
+        var featureGrid = document.querySelector('.feature-grid');
+        if (featureGrid) {
+          duplicateChildrenOnce(featureGrid, 'feature-card-clone');
+          initMarquee(featureGrid, { speed: 35 });
+        }
+
+        var benefits = document.querySelector('.benefits');
+        if (benefits) {
+          // Section 3 already has its .benefit-clone duplicates in the HTML.
+          initMarquee(benefits, { speed: 45 });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+      } else {
+        start();
+      }
+    })();
+    </script>
 </body>
 
 </html>
