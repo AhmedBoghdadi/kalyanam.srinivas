@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css?12">
-    <link rel="stylesheet" href="assets/css/responsive.css?12.3">
+    <link rel="stylesheet" href="assets/css/responsive.css?12.4">
     <link rel="stylesheet" href="assets/css/utilities.css">
     <link rel="stylesheet" href="assets/css/section1.css">
     <link rel="stylesheet" href="assets/css/section2.css">
@@ -95,14 +95,32 @@
                     href="films.html" data-page-link="films" data-testid="nav-films-link">Films</a><a href="music.html"
                     data-page-link="music" data-testid="nav-music-link">Music</a><a href="about.html"
                     data-page-link="about" data-testid="nav-about-link">About</a><a href="contact.html"
-                    data-page-link="contact" data-testid="nav-contact-link">Contact</a><a class="primary-btn"
-                    href="/courses.html" style="text-align: center;">Join for Free</a></nav>
+                    data-page-link="contact" data-testid="nav-contact-link">Contact</a>
+                <div class="mobile-nav-actions"><a class="btn btn-secondary" href="tel:+919346273799"
+                        data-testid="mobile-header-call-link"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" data-lucide="phone"
+                            class="lucide lucide-phone icon-sm" aria-hidden="true">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>Call</a><a class="btn btn-primary" href="https://wa.me/919346273799" target="_blank"
+                        rel="noopener" data-testid="mobile-header-whatsapp-link"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle"
+                            class="lucide lucide-message-circle icon-sm" aria-hidden="true">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                        </svg>WhatsApp</a></div>
+                <a class="primary-btn" href="/courses.html" style="text-align: center;">Join for Free</a>
+            </nav>
         </div>
     </header>
     <main id="main-content">
         <section class="hero" id="home"><img class="hero-media" src="assets/css/images/hero.png?123"
                 alt="Filmmaker editing an AI-generated film scene at a desktop workstation, surrounded by 'Dream Plan Create Repeat' notes and film books"
-                loading="eager" fetchpriority="high"></section>
+                loading="eager" fetchpriority="high" style="
+    cursor: pointer;
+" onclick="window.location.href = '/courses.html'"></section>
         <section class="feature-grid" id="academy" style="color: white;">
             <article class="feature-card card-one video-trigger" id="films" data-video-id="GFlLJdR606g" role="button"
                 tabindex="0" aria-label="Play Mayaa Putalu trailer"></article>
@@ -270,6 +288,10 @@
     <script src="assets/js/md.nav.js" type="module"></script>
     <script src="assets/js/benefits-strip.js" type="module"></script>
     <script>(function () { document.querySelectorAll('.video-trigger').forEach(function (card) { function playVideo() { if (card.querySelector('iframe')) return; var id = card.getAttribute('data-video-id'); var iframe = document.createElement('iframe'); iframe.className = 'video-embed'; iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0'; iframe.title = 'YouTube video player'; iframe.setAttribute('frameborder', '0'); iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; iframe.allowFullscreen = true; card.appendChild(iframe); card.removeAttribute('role'); card.removeAttribute('tabindex'); card.removeAttribute('aria-label'); card.classList.remove('video-trigger'); } card.addEventListener('click', playVideo); card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); } }); }); })(); </script>
+
+
+
+
 </body>
 
 </html>

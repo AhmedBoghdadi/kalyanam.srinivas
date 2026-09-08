@@ -242,6 +242,40 @@
   }
 }
 
+/*
+  Desktop-only 50/50 split (paired with the matching rule in
+  section1.css):
+  #site-header is fixed at exactly 75px tall on every screen size
+  (main { padding-top: 75px } in base.css), so the space below it is
+  always (100vh - 75px). Section 2 (.feature-grid) takes the bottom
+  half of that space to match Section 1's (.hero) top half, using the
+  same vh-based calc() so the 50/50 split holds at every desktop
+  width, not just one fixed breakpoint. The row keeps its existing
+  horizontal scroll/snap behavior so card 4 is still reachable, and
+  cards now size from the section's fixed height (via aspect-ratio)
+  instead of a viewport-width clamp, so they keep their 4:3 shape and
+  fully fill the section top-to-bottom with no letterboxing.
+  1024px matches the desktop breakpoint already used in section1.css,
+  so mobile/tablet are unaffected and keep their normal,
+  content-driven heights. This is placed after the 1199px/1200px
+  rules above so it wins the cascade at every desktop width,
+  including 1024-1199px where the "tablet and phone" block above
+  would otherwise also apply.
+*/
+@media (min-width: 1024px) {
+  .feature-grid {
+    height: calc((100vh - 75px) / 2);
+    height: calc((100dvh - 75px) / 2);
+    align-items: center;
+  }
+
+  .feature-card {
+    flex: 0 0 auto;
+    width: auto;
+    height: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .feature-grid {
     gap: 12px;

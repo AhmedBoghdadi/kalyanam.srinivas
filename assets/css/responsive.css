@@ -7,12 +7,64 @@
         display: none
     }
 
+    .nav-actions .btn-secondary {
+        display: none
+    }
+
     .nav-actions .primary-btn {
         display: none
     }
 
     .mobile-menu-toggle {
         display: inline-grid
+    }
+
+    #mobile-nav .mobile-nav-actions,
+    .mobile-nav-actions {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 1rem !important;
+        margin: .5rem 0 0 !important;
+        padding: 0 !important;
+    }
+
+    #mobile-nav .mobile-nav-actions a.btn,
+    .mobile-nav-actions a.btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: .6rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: .9rem 1rem !important;
+        font-size: .85rem !important;
+        line-height: 1 !important;
+        box-sizing: border-box !important;
+    }
+
+    #mobile-nav .mobile-nav-actions a.btn-secondary,
+    .mobile-nav-actions a.btn-secondary {
+        border: 1px solid var(--color-gold) !important;
+    }
+
+    #mobile-nav .mobile-nav-actions a.btn-primary,
+    .mobile-nav-actions a.btn-primary {
+        border: 1px solid transparent !important;
+    }
+
+    #mobile-nav .mobile-nav-actions a.btn svg,
+    .mobile-nav-actions a.btn svg {
+        width: 20px !important;
+        height: 20px !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin: 0 !important;
+    }
+
+    #mobile-nav > .primary-btn {
+        margin-top: 1rem !important;
     }
 
     .mobile-nav,
@@ -26,7 +78,7 @@
         margin: 0;
         min-height: calc(100dvh - 76px);
         overflow-y: auto;
-        padding: var(--space-8) 1rem;
+        padding: var(--space-3) 1rem var(--space-8);
         background: var(--color-charcoal-soft);
         border-top: 1px solid rgba(215, 168, 75, .35);
         box-shadow: 0 24px 48px rgba(0, 0, 0, .35)
@@ -141,10 +193,6 @@
 }
 
 @media (max-width:380px) {
-    .nav-actions .btn-secondary {
-        display: none
-    }
-
     .hero-actions .btn {
         width: 100%
     }
