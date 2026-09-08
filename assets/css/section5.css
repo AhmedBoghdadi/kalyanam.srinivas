@@ -1,0 +1,65 @@
+/* Section 5: Learning path cards ("Choose the frame you want to explore")
+   Mobile + tablet: horizontal scrolling with screen-edge spacing (same
+   behaviour as Section 2's feature-grid).
+   Laptop + desktop: static 3-column grid, no scrolling.
+
+   Scoped to `.section-maroon .grid-3` so it only affects this section and
+   does not touch `.grid-3` usage elsewhere on the site (e.g. the tutorials
+   grid or other pages).
+*/
+
+@media (max-width: 1199px) {
+  .section-maroon .grid-3 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    width: auto;
+    max-width: none;
+    margin-inline: -1rem;
+    padding: 4px 24px 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 24px;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--yellow) #10202b;
+  }
+
+  .section-maroon .grid-3::-webkit-scrollbar { height: 7px; }
+  .section-maroon .grid-3::-webkit-scrollbar-track { background: #10202b; border-radius: 20px; }
+  .section-maroon .grid-3::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 20px; }
+
+  .section-maroon .grid-3 > .card {
+    flex: 0 0 clamp(280px, 42vw, 400px);
+    width: clamp(280px, 42vw, 400px);
+    max-width: none;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+}
+
+/* Phones: slightly smaller but still clearly visible edge gap */
+@media (max-width: 600px) {
+  .section-maroon .grid-3 {
+    gap: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    scroll-padding-inline: 20px;
+  }
+
+  .section-maroon .grid-3 > .card {
+    flex-basis: 86vw;
+    width: 86vw;
+  }
+}
+
+/* Desktop: no horizontal scrolling, back to a normal grid */
+@media (min-width: 1200px) {
+  .section-maroon .grid-3 {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}

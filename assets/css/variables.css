@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@500;600&family=Playfair+Display:wght@600;800&display=swap');
+
+:root {
+    --color-charcoal: #171515;
+    --color-charcoal-soft: #211e1d;
+    --color-maroon: #6b1a26;
+    --color-maroon-dark: #351418;
+    --color-gold: #d7a84b;
+    --color-gold-soft: #ead49e;
+    --color-cream: #f5ebd7;
+    --color-paper: #fdfbf7;
+    --color-green: #4d6252;
+    --color-muted: #77716a;
+    --color-border: rgba(215, 168, 75, .22);
+    --color-white: #fffdf8;
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --radius-sm: 4px;
+    --radius-md: 10px;
+    --radius-lg: 18px;
+    --shadow-soft: 0 12px 34px rgba(24, 15, 12, .12);
+    --shadow-dark: 0 20px 50px rgba(0, 0, 0, .28);
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', 'Noto Sans Telugu', 'Nirmala UI', system-ui, sans-serif;
+    --font-accent: 'Outfit', var(--font-body);
+    --max-width: 1180px;
+    --transition-fast: 180ms ease;
+    --transition-base: 260ms ease;
+}

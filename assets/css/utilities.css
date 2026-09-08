@@ -1,0 +1,46 @@
+.text-muted {
+    color: var(--color-muted);
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-light-muted {
+    color: rgba(253, 251, 247, .68);
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mb-8 {
+    margin-bottom: var(--space-8);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-3 {
+    gap: var(--space-3);
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.icon-sm {
+    width: 15px;
+    height: 15px;
+}
+
+.icon-lg {
+    width: 24px;
+    height: 24px;
+}

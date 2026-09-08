@@ -1,0 +1,248 @@
+/* Section 2: Feature cards
+   All screen sizes: horizontal scrolling row so each card keeps a
+   comfortable, readable size (matching the original 3-card size)
+   even now that there are 4 cards.
+*/
+
+.feature-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 2.3% 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 2.3%;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) #10202b;
+  background: #020a10;
+}
+
+.feature-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.feature-grid::-webkit-scrollbar-track {
+  background: #10202b;
+  border-radius: 20px;
+}
+
+.feature-grid::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border-radius: 20px;
+}
+
+.feature-card {
+  position: relative;
+  flex: 0 0 clamp(610px, 57vw, 840px);
+  width: clamp(610px, 57vw, 840px);
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  padding: 14px 20px;
+  overflow: hidden;
+  border: 1px solid var(--yellow);
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.video-trigger {
+  cursor: pointer;
+}
+
+.feature-card .video-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.feature-card:hover {
+  border-color: #fff06a;
+  box-shadow: 0 8px 24px rgba(255, 210, 31, .16);
+}
+
+.card-one,
+.card-two,
+.card-three {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-one {
+  background-image: linear-gradient(rgb(247 249 252 / 0%), rgb(234 236 238 / 0%)), url(images/001.png);
+}
+
+.card-two {
+  background-image: linear-gradient(rgb(227 232 240 / 0%), rgb(228 233 238 / 0%)), url(images/002.png);
+}
+
+.card-three {
+  background-image: linear-gradient(rgb(239 242 245 / 0%), rgb(239 243 248 / 0%)), url(images/003.png);
+}
+
+/* Card 4: "Who should learn" summary card
+   Uses container query units (cqw) so every piece of text and spacing
+   scales with the card's own width. Because .card-four shares the same
+   aspect-ratio (4 / 3) and the same flex width as its siblings, it
+   stays the exact same height as cards 1-3 on every breakpoint, and
+   its content stays fitted edge-to-edge with no internal scrolling.
+*/
+.card-four {
+  container-type: inline-size;
+  container-name: who-card;
+  background: #fdfbf7;
+  border-color: var(--yellow, #ffd21f);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 3.4cqw 4cqw;
+}
+
+.card-four .who-eyebrow {
+  color: var(--color-maroon, #b4382d);
+  margin: 0 0 1cqw;
+  font-size: 3.6cqw;
+  line-height: 1.2;
+}
+
+.card-four .who-heading {
+  margin: 0 0 1.4cqw;
+  font-size: 6.6cqw;
+  line-height: 1.14;
+  color: #171515;
+  font-family: var(--font-heading, inherit);
+}
+
+.card-four .who-list {
+  margin: 0 0 1.6cqw;
+  list-style: none;
+  padding: 0;
+}
+
+.card-four .who-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6cqw;
+  margin-bottom: 1.1cqw;
+}
+
+.card-four .who-list li:last-child {
+  margin-bottom: 0;
+}
+
+.card-four .who-list svg {
+  flex: none;
+  width: 4.6cqw;
+  height: 4.6cqw;
+  margin-top: .3cqw;
+  color: var(--yellow, #d99a1f);
+}
+
+.card-four .who-list span {
+  font-size: 4.5cqw;
+  line-height: 1.28;
+  color: #211e1d;
+}
+
+.card-four .who-mini-card {
+  display: flex;
+  gap: 2.4cqw;
+  align-items: flex-start;
+  margin-top: auto;
+  padding: 2.2cqw 2.6cqw;
+  background: #fff6da;
+  border: 1px solid rgba(217, 154, 31, .35);
+  border-radius: 6px;
+}
+
+.card-four .who-mini-icon {
+  flex: none;
+  width: 6.6cqw;
+  height: 6.6cqw;
+  display: grid;
+  place-items: center;
+  color: #b4382d;
+  background: #fdfbf7;
+  border-radius: 50%;
+}
+
+.card-four .who-mini-icon svg {
+  width: 3.8cqw;
+  height: 3.8cqw;
+}
+
+.card-four .who-mini-card h3 {
+  margin: 0 0 .5cqw;
+  font-size: 4.3cqw;
+  line-height: 1.2;
+  color: #171515 !important;
+}
+
+.card-four .who-mini-card p {
+  margin: 0;
+  font-size: 3.7cqw;
+  line-height: 1.32;
+  color: #4b4642;
+}
+
+.feature-card h2 {
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+.feature-card h3 {
+  color: var(--yellow);
+  font-size: 22px;
+}
+
+.feature-card p {
+  margin: 8px 0;
+}
+
+.feature-card ul {
+  margin: 15px 0 20px;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.feature-card li::marker {
+  color: var(--yellow);
+}
+
+/* Tablet and phone: slightly larger edge gap, cards take up most of the
+   viewport width so they stay easy to read on smaller screens too */
+@media (max-width: 1199px) {
+  .feature-grid {
+    padding: 14px 24px 18px;
+    scroll-padding-inline: 24px;
+  }
+
+  .feature-card {
+    flex-basis: clamp(520px, 82vw, 730px);
+    width: clamp(520px, 82vw, 730px);
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    gap: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    scroll-padding-inline: 20px;
+  }
+
+  .feature-card {
+    flex-basis: 97vw;
+    width: 97vw;
+  }
+}

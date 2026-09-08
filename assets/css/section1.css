@@ -1,0 +1,161 @@
+/* First HTML section: Hero only */
+
+:root {
+  --yellow: #ffd21f;
+  --dark: #02080d;
+  --white: #fff;
+}
+
+/*
+  Hero image strategy
+  --------------------
+  hero.png is a fixed 2172x724 (3:1) banner. We render it as a real <img>
+  in normal document flow with width:100%; height:auto. That guarantees
+  its rendered height is ALWAYS exactly width * (724/2172) at every
+  possible viewport size — no cropping, no gaps, no fighting with other
+  min-height/aspect-ratio rules. This is the one thing that is 100%
+  reliable across browsers.
+
+  That intrinsic height shrinks as the viewport narrows though (e.g. only
+  ~125px at a 375px phone width), which is nowhere near enough room to
+  overlay the heading/subtitle/buttons on top of it without collision.
+  So:
+    - Below 1024px: image sits on its own (full width, auto height,
+      always edge-to-edge, never cropped), and the text content flows
+      in its own solid-color panel directly underneath. No overlay, so
+      no possible collision no matter how short the image gets.
+    - At 1024px+: the image's intrinsic height (~341px and growing) is
+      already close to the original design's fixed 338px text slot, so
+      it's safe to overlay the text on top of the image again, matching
+      the original design.
+*/
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.hero-media {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-content {
+  max-width: 625px;
+  padding: 28px 3.6%;
+}
+
+.eyebrow {
+  font-size: 24px;
+}
+
+.hero h1 {
+  margin: 4px 0 12px;
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: .98;
+}
+
+.hero h1 span {
+  color: var(--yellow);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+}
+
+.topics {
+  margin-top: 9px;
+  color: #d4e5f4;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 12px 19px;
+  border-radius: 10px;
+  color: #050505;
+  background: linear-gradient(135deg, #ffe95a, #ffbd0b);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+.video-btn .icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -8px;
+}
+
+.video-btn span {
+  font-size: 14px;
+  text-align: left;
+}
+
+.hero-note {
+  margin-top: 10px;
+  color: #e2e2e2;
+}
+
+/* --- Below 1024px: stacked layout (image on top, panel below) --- */
+@media (max-width: 1023px) {
+  .hero-content {
+    background: var(--dark);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 30px 20px;
+  }
+
+  .eyebrow {
+    font-size: 18px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .topics {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* --- 1024px+: overlay layout (text on top of the image, like the
+   original design) --- */
+@media (min-width: 1024px) {
+  .hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(2, 8, 13, .78) 0%, rgba(2, 8, 13, .55) 45%, rgba(2, 8, 13, 0) 75%);
+  }
+}
