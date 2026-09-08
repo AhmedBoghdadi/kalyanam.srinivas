@@ -18,19 +18,19 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/Logo.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/variables.css?123">
-    <link rel="stylesheet" href="assets/css/base.css?123">
-    <link rel="stylesheet" href="assets/css/layout.css?123">
+    <link rel="icon" href="/Logo.png?123" type="image/png">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css?12">
     <link rel="stylesheet" href="assets/css/responsive.css?12.3">
-    <link rel="stylesheet" href="assets/css/utilities.css?123">
-    <link rel="stylesheet" href="assets/css/section1.css?123">
-    <link rel="stylesheet" href="assets/css/section2.css?123">
-    <link rel="stylesheet" href="assets/css/section3.css?123">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/section1.css">
+    <link rel="stylesheet" href="assets/css/section2.css">
+    <link rel="stylesheet" href="assets/css/section3.css">
     <link rel="stylesheet" href="assets/css/benefits-strip.css?1.83">
-    <link rel="stylesheet" href="assets/css/section5.css?123">
-    <link rel="stylesheet" href="assets/css/section6.css?123">
+    <link rel="stylesheet" href="assets/css/section5.css">
+    <link rel="stylesheet" href="assets/css/section6.css">
     <style>
         .icon {
             width: 1.35em;
@@ -53,7 +53,7 @@
     <header id="site-header">
         <div class="site-header">
             <div class="container nav-inner"><a class="brand" href="/" data-testid="brand-home-link"><span
-                        class="brand-mark"><img src="Brand.Logo.jpg"
+                        class="brand-mark"><img src="Brand.Logo.jpg?123"
                             alt="Kalyanam Srinivas AI Film Making Academy Logo"></span></a>
                 <nav class="site-nav" aria-label="Primary navigation"><a href="/" data-page-link="home"
                         data-testid="nav-home-link" aria-current="page">Home</a><a href="courses.html"
@@ -100,24 +100,9 @@
         </div>
     </header>
     <main id="main-content">
-        <section class="hero" id="home"><img class="hero-media" src="assets/css/images/hero.png"
+        <section class="hero" id="home"><img class="hero-media" src="assets/css/images/hero.png?123"
                 alt="Filmmaker editing an AI-generated film scene at a desktop workstation, surrounded by 'Dream Plan Create Repeat' notes and film books"
-                loading="eager" fetchpriority="high">
-            <div class="hero-content">
-                <p class="eyebrow " style="font-size:15px;">First AI Film Making Academy</p>
-                <h1><span>Your Story</span><br>Can Be a Movie!</h1>
-                <p class="hero-subtitle " style="font-size:15px;">Complete AI Film Making Course – Concept to Final
-                    Output</p>
-                <p class="topics " style="font-size:15px;">Story | Script | Characters | AI Video | Voice | Music |
-                    Editing | Final Film </p>
-                <div class="hero-buttons"><a class="primary-btn" href="/courses.html">Join for Free <svg class="icon"
-                            viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M5 12h14M13 6l6 6-6 6"></path>
-                        </svg></a></div>
-                <p class="hero-note " style="font-size:15px;">No expensive camera. No big crew. Just your story +
-                    creativity + AI.</p>
-            </div>
-        </section>
+                loading="eager" fetchpriority="high"></section>
         <section class="feature-grid" id="academy" style="color: white;">
             <article class="feature-card card-one video-trigger" id="films" data-video-id="GFlLJdR606g" role="button"
                 tabindex="0" aria-label="Play Mayaa Putalu trailer"></article>
@@ -201,7 +186,7 @@
         <footer class="footer">
             <div class="container footer-grid">
                 <div>
-                    <div class="brand"><span class="brand-mark"><img src="Brand.Logo.jpg"
+                    <div class="brand"><span class="brand-mark"><img src="Brand.Logo.jpg?123"
                                 alt="Kalyanam Srinivas AI Film Making Academy Logo"></span></div>
                     <p class="mt-4" data-testid="footer-description">Telugu-first creative education for AI video,
                         music, voice and cinematic storytelling.</p><a class="btn btn-primary mt-4"
@@ -282,8 +267,8 @@
                         data-testid="footer-rights-link">Content rights</a></span></div>
         </footer>
     </footer>
-    <script src="assets/js/md.nav.js?123" type="module"></script>
-    <script src="assets/js/benefits-strip.js?123" type="module"></script>
+    <script src="assets/js/md.nav.js" type="module"></script>
+    <script src="assets/js/benefits-strip.js" type="module"></script>
     <script>(function () { document.querySelectorAll('.video-trigger').forEach(function (card) { function playVideo() { if (card.querySelector('iframe')) return; var id = card.getAttribute('data-video-id'); var iframe = document.createElement('iframe'); iframe.className = 'video-embed'; iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0'; iframe.title = 'YouTube video player'; iframe.setAttribute('frameborder', '0'); iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; iframe.allowFullscreen = true; card.appendChild(iframe); card.removeAttribute('role'); card.removeAttribute('tabindex'); card.removeAttribute('aria-label'); card.classList.remove('video-trigger'); } card.addEventListener('click', playVideo); card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); } }); }); })(); </script>
 </body>
 
