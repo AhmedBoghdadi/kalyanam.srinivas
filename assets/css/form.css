@@ -391,6 +391,57 @@ textarea:focus {
   color: var(--muted);
 }
 
+.gst-note {
+  font-size: .68rem;
+  color: var(--muted);
+}
+
+.order-summary {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  padding: 14px 16px;
+  margin-top: -4px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .88rem;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+.summary-row span:last-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.summary-total {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.summary-total span:last-child {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--accent-dark);
+}
+
+.summary-hint {
+  margin: 6px 0 0;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.order-summary.has-selection {
+  border-color: var(--accent-dark);
+}
+
 .checkbox-field {
   margin-top: 4px;
 }

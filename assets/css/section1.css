@@ -84,7 +84,7 @@
   margin-top: 16px;
 }
 
-.primary-btn {
+/* .primary-btn {
   display: inline-block;
   padding: 12px 19px;
   border-radius: 10px;
@@ -92,7 +92,7 @@
   background: linear-gradient(135deg, #ffe95a, #ffbd0b);
   font-weight: 800;
   text-decoration: none;
-}
+} */
 
 
 .video-btn .icon {
