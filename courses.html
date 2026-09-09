@@ -16,7 +16,7 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <link rel="icon" href="/Logo.png" type="image/png">
+    <link rel="icon" href="Logo.png" type="image/png">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
@@ -580,28 +580,28 @@
         }
 
         .pic {
-            height: 88px;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            width: 100%;
             display: grid;
             place-items: center;
             margin-bottom: 5px;
             border: 1px solid #688895;
             border-radius: 7px;
-            background: linear-gradient(135deg, #c07a40, #203a4a 45%, #0d1723)
+            background: linear-gradient(135deg, #c07a40, #203a4a 45%, #0d1723);
+            overflow: hidden;
+            padding: 0
         }
 
         .pic i {
             font-size: 30px
         }
 
-        .pic {
-            overflow: hidden;
-            padding: 0
-        }
-
         .pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block
         }
 
@@ -827,10 +827,10 @@
 <body data-page="courses">
     <header id="site-header">
         <div class="site-header">
-            <div class="container nav-inner"><a class="brand" href="index.html" data-testid="brand-home-link"><span
+            <div class="container nav-inner"><a class="brand" href="" data-testid="brand-home-link"><span
                         class="brand-mark"><img src="Brand.Logo.jpg"
                             alt="Kalyanam Srinivas AI Film Making Academy Logo"></span></a>
-                <nav class="site-nav" aria-label="Primary navigation"><a href="index.html" data-page-link="home"
+                <nav class="site-nav" aria-label="Primary navigation"><a href="" data-page-link="home"
                         data-testid="nav-home-link">Home</a><a href="courses.html" data-page-link="courses"
                         data-testid="nav-courses-link" aria-current="page">Courses</a><a href="tutorials.html"
                         data-page-link="tutorials" data-testid="nav-tutorials-link">Tutorials</a><a href="films.html"
@@ -852,7 +852,7 @@
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle"
                             class="lucide lucide-message-circle icon-sm" aria-hidden="true">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                        </svg>WhatsApp</a><a class="primary-btn" href="/courses.html">Join for Free</a><button
+                        </svg>WhatsApp</a><a class="primary-btn" href="courses.html">Join for Free</a><button
                         class="icon-button mobile-menu-toggle" type="button" aria-expanded="false"
                         aria-controls="mobile-nav" aria-label="Open navigation" data-testid="mobile-menu-toggle"><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -864,7 +864,7 @@
                         </svg></button></div>
             </div>
             <nav id="mobile-nav" class="mobile-nav container" aria-label="Mobile navigation" style="display: none;"><a
-                    href="index.html" data-page-link="home" data-testid="nav-home-link" aria-current="page">Home</a><a
+                    href="" data-page-link="home" data-testid="nav-home-link" aria-current="page">Home</a><a
                     href="courses.html" data-page-link="courses" data-testid="nav-courses-link">Courses</a><a
                     href="tutorials.html" data-page-link="tutorials" data-testid="nav-tutorials-link">Tutorials</a><a
                     href="films.html" data-page-link="films" data-testid="nav-films-link">Films</a><a href="music.html"
@@ -885,7 +885,7 @@
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle"
                             class="lucide lucide-message-circle icon-sm" aria-hidden="true">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                        </svg>WhatsApp</a></div><a class="primary-btn" href="/courses.html"
+                        </svg>WhatsApp</a></div><a class="primary-btn" href="courses.html"
                     style="text-align: center;">Join for Free</a>
             </nav>
         </div>
@@ -939,7 +939,9 @@
             <div class="cards">
                 <div class="card"><span class="num">01</span>
                     <h3>STORY<br>DEVELOPMENT</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1731963094554-c5c981ccdefd?auto=format&fit=crop&w=600&q=70" alt="Notebook with idea, story and script notes" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1731963094554-c5c981ccdefd?auto=format&fit=crop&w=600&q=70"
+                            alt="Notebook with idea, story and script notes" loading="lazy"></div>
                     <ul>
                         <li>Idea</li>
                         <li>Concept</li>
@@ -950,7 +952,9 @@
                 </div>
                 <div class="card"><span class="num">02</span>
                     <h3>CHARACTERS<br>&amp; WORLD</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1777927515662-a460bce161eb?auto=format&fit=crop&w=600&q=70" alt="Cinematic character portrait for a film world" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1777927515662-a460bce161eb?auto=format&fit=crop&w=600&q=70"
+                            alt="Cinematic character portrait for a film world" loading="lazy"></div>
                     <ul>
                         <li>Characters</li>
                         <li>Locations</li>
@@ -960,7 +964,9 @@
                 </div>
                 <div class="card"><span class="num">03</span>
                     <h3>CINEMATIC<br>DESIGN</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1705107958312-c59d84c47b2c?auto=format&fit=crop&w=600&q=70" alt="Cinema camera rigged on a tripod" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1705107958312-c59d84c47b2c?auto=format&fit=crop&w=600&q=70"
+                            alt="Cinema camera rigged on a tripod" loading="lazy"></div>
                     <ul>
                         <li>Shots</li>
                         <li>Camera</li>
@@ -971,7 +977,9 @@
                 </div>
                 <div class="card"><span class="num">04</span>
                     <h3>SCRIPT TO<br>PROMPT</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1695462131582-77b777ea8ce8?auto=format&fit=crop&w=600&q=70" alt="Typewriter turning a script into a written page" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1695462131582-77b777ea8ce8?auto=format&fit=crop&w=600&q=70"
+                            alt="Typewriter turning a script into a written page" loading="lazy"></div>
                     <ul>
                         <li>Screenplay</li>
                         <li>Scenes</li>
@@ -980,7 +988,10 @@
                 </div>
                 <div class="card"><span class="num">05</span>
                     <h3>AI FILM<br>PRODUCTION</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1746746797450-abdf621cbd3d?auto=format&fit=crop&w=600&q=70" alt="Cinematic wide shot of a figure walking through a golden landscape" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1746746797450-abdf621cbd3d?auto=format&fit=crop&w=600&q=70"
+                            alt="Cinematic wide shot of a figure walking through a golden landscape" loading="lazy">
+                    </div>
                     <ul>
                         <li>Tag Characters</li>
                         <li>Tag Locations</li>
@@ -992,7 +1003,9 @@
                 </div>
                 <div class="card"><span class="num">06</span>
                     <h3>EDITING</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=70" alt="Video editing timeline with clips on a dark screen" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=600&q=70"
+                            alt="Video editing timeline with clips on a dark screen" loading="lazy"></div>
                     <ul>
                         <li>Title</li>
                         <li>Credits</li>
@@ -1005,7 +1018,9 @@
                 </div>
                 <div class="card"><span class="num">07</span>
                     <h3>FINAL RELEASE<br>&amp; PROMOTION</h3>
-                    <div class="thumb"><img src="https://images.unsplash.com/photo-1771574203200-0ec88f162fe0?auto=format&fit=crop&w=600&q=70" alt="Empty cinema hall with a large screen ready for release" loading="lazy"></div>
+                    <div class="thumb"><img
+                            src="https://images.unsplash.com/photo-1771574203200-0ec88f162fe0?auto=format&fit=crop&w=600&q=70"
+                            alt="Empty cinema hall with a large screen ready for release" loading="lazy"></div>
                     <ul>
                         <li>Poster</li>
                         <li>Trailer</li>
@@ -1019,7 +1034,10 @@
         </section>
         <section class="wrap modules">
             <article class="module">
-                <div class="module-media"><img src="https://images.unsplash.com/photo-1718851332146-4f99cbefdf6d?auto=format&fit=crop&w=800&q=70" alt="Singer recording vocals into a microphone in a music studio" loading="lazy"><span class="discount-badge">50%<br>OFF</span></div>
+                <div class="module-media"><img
+                        src="https://images.unsplash.com/photo-1718851332146-4f99cbefdf6d?auto=format&fit=crop&w=800&q=70"
+                        alt="Singer recording vocals into a microphone in a music studio" loading="lazy"><span
+                        class="discount-badge">50%<br>OFF</span></div>
                 <h2>AI Music &amp; Music Videos</h2>
                 <p>Create Your Own Music Studio</p>
                 <div class="price-row"><span class="price-old">₹10,000</span><span class="price-new">₹5,000</span></div>
@@ -1036,7 +1054,10 @@
 ">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </article>
             <article class="module">
-                <div class="module-media"><img src="https://images.unsplash.com/photo-1634696684126-462b1a767e22?auto=format&fit=crop&w=800&q=70" alt="Colorful 3D animated render representing creative ads and animation" loading="lazy"><span class="discount-badge">50%<br>OFF</span></div>
+                <div class="module-media"><img
+                        src="https://images.unsplash.com/photo-1634696684126-462b1a767e22?auto=format&fit=crop&w=800&q=70"
+                        alt="Colorful 3D animated render representing creative ads and animation" loading="lazy"><span
+                        class="discount-badge">50%<br>OFF</span></div>
                 <h2>AI Ads, Animation &amp; Creative Content</h2>
                 <p>Turn Ideas Into Impact</p>
                 <div class="price-row"><span class="price-old">₹10,000</span><span class="price-new">₹5,000</span></div>
@@ -1093,22 +1114,29 @@
             </div>
             <div class="videos">
                 <a class="video" href="https://youtu.be/R5u2GpNUwBk?si=ihohliYdsk7AM5uk" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/R5u2GpNUwBk/hqdefault.jpg" alt="Devotional Songs video thumbnail" loading="lazy"></div>Devotional Songs
+                    <div class="pic"><img src="https://img.youtube.com/vi/R5u2GpNUwBk/mqdefault.jpg"
+                            alt="Devotional Songs video thumbnail" loading="lazy"></div>Devotional Songs
                 </a>
                 <a class="video" href="https://youtu.be/eLsRGj4BDJQ?si=2mwO0UFJ5TSj4ZFt" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/eLsRGj4BDJQ/hqdefault.jpg" alt="Folk Songs video thumbnail" loading="lazy"></div>Folk Songs
+                    <div class="pic"><img src="https://img.youtube.com/vi/eLsRGj4BDJQ/mqdefault.jpg"
+                            alt="Folk Songs video thumbnail" loading="lazy"></div>Folk Songs
                 </a>
                 <a class="video" href="https://youtu.be/W_DQSXL7cTw?si=rUlGi5uJo2ttdNLh" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/W_DQSXL7cTw/hqdefault.jpg" alt="Short Films video thumbnail" loading="lazy"></div>Short Films
+                    <div class="pic"><img src="https://img.youtube.com/vi/W_DQSXL7cTw/mqdefault.jpg"
+                            alt="Short Films video thumbnail" loading="lazy"></div>Short Films
                 </a>
-                <a class="video" href="https://www.youtube.com/live/aXdpyf80aco?si=qwz26D6LOT7-wCq5" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/aXdpyf80aco/hqdefault.jpg" alt="Trailers video thumbnail" loading="lazy"></div>Trailers
+                <a class="video" href="https://www.youtube.com/live/aXdpyf80aco?si=qwz26D6LOT7-wCq5" target="_blank"
+                    rel="noopener">
+                    <div class="pic"><img src="https://img.youtube.com/vi/aXdpyf80aco/mqdefault.jpg"
+                            alt="Trailers video thumbnail" loading="lazy"></div>Trailers
                 </a>
                 <a class="video" href="https://youtu.be/y3_SPwhBTbg?si=4MhIA_XjmkwlbX7l" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/y3_SPwhBTbg/hqdefault.jpg" alt="Upcoming Movies video thumbnail" loading="lazy"></div>Upcoming Movies
+                    <div class="pic"><img src="https://img.youtube.com/vi/y3_SPwhBTbg/mqdefault.jpg"
+                            alt="Upcoming Movies video thumbnail" loading="lazy"></div>Upcoming Movies
                 </a>
                 <a class="video" href="https://youtu.be/dkvRiCgcUtw?si=m70QErDrCiHEcCLX" target="_blank" rel="noopener">
-                    <div class="pic"><img src="https://img.youtube.com/vi/dkvRiCgcUtw/hqdefault.jpg" alt="Stories video thumbnail" loading="lazy"></div>Stories
+                    <div class="pic"><img src="https://img.youtube.com/vi/dkvRiCgcUtw/mqdefault.jpg"
+                            alt="Stories video thumbnail" loading="lazy"></div>Stories
                 </a>
             </div>
         </section>
